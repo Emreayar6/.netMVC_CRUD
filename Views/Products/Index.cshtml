@@ -1,0 +1,42 @@
+﻿@using BookStore.Models.Entity;
+@model List<TBLPRODUCT>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>This Area For Prducts</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>PRODUCT ID</th>
+        <th>PRODUCT NAME</th>
+        <th>PRODUCT BRAND</th>
+        <th>PRODUCT CATEGORY</th>
+        <th>PRICE</th>
+        <th>STOCK</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+    <tbody>
+        @foreach (var prdct in Model)
+        {
+        <tr>
+            <th>@prdct.PRODUCTID</th>
+            <td>@prdct.PRODUCTNAME</td>
+            <td>@prdct.BRAND</td>
+            <td>@prdct.TBLCATEGORY.CATEGORYNAME</td>
+            <td>@prdct.PRICE</td>
+            <td>@prdct.STOCK</td>
+            <td><a href="/PRODUCTS/Delete/@prdct.PRODUCTID" class="btn btn-danger">DELETE</a></td>
+            <td><a href="/PRODUCTS/BringProduct/@prdct.PRODUCTID" class="btn btn-info">UPDATE</a></td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/PRODUCTS/NewProduct/" class="btn btn-success">NEW PRODUCT</a>
+<div>
+    <br />
+</div>

@@ -1,0 +1,27 @@
+﻿@model BookStore.Models.Entity.TBLCLIENT
+@{
+    ViewBag.Title = "NewClient";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Client Name</label>
+        @Html.TextBoxFor(m => m.CLIENTNAME, new { @class = "form-control"})
+        @Html.ValidationMessageFor(m => m.CLIENTNAME,"",new { @style = "color:red"})
+    </div>
+    <div>
+        <label>Client Surname</label>
+        @Html.TextBoxFor(m => m.CLIENTSURNAME, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CLIENTSURNAME, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info" id="btn1">Add Client</button>
+    </div>
+    <script>
+        $("#btn1").click(function () {
+            alert("Client has been added...");
+        })
+    </script>
+</form>
+

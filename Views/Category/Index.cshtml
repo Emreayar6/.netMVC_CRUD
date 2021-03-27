@@ -1,0 +1,37 @@
+﻿@using BookStore.Models.Entity
+@model PagedList.IPagedList<TBLCATEGORY>
+@using PagedList
+@using PagedList.Mvc
+
+@*<!DOCTYPE html>
+<link href="~/Content/deneme.css" rel="stylesheet" type="text/css" />*@
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<br />
+<h2>This Area For Category Section....</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>CATEGORY ID</th>
+        <th>CATEGORY NAME</th>
+        <th>DELETE</th>
+        <th>UPDATE</th>
+    </tr>
+    <tbody>
+        @foreach (var ctgry in Model)
+        {
+            <tr>
+                <th>@ctgry.CATEGORYID</th>
+                <td>@ctgry.CATEGORYNAME</td>
+                <td><a href="/CATEGORY/Delete/@ctgry.CATEGORYID" class="btn btn-danger">DELETE</a></td>
+                <td><a href="/CATEGORY/BringCategory/@ctgry.CATEGORYID" class="btn btn-info">UPDATE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, @class = "form-control", @style = "color:red" }))
+@*@Html.PagedListPager(Model, _sayfaNo => Url.Action("Index", "Home", new { SayfaNo = _sayfaNo }))*@
+<a href="/CATEGORY/NewCategory/" class="btn btn-success">NEW CATEGORY</a>

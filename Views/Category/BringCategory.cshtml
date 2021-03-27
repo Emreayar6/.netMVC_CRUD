@@ -1,0 +1,25 @@
+﻿@model BookStore.Models.Entity.TBLCATEGORY
+@{
+    ViewBag.Title = "BringCategory";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>UPDATE CATEGORY</h2>
+
+@using (Html.BeginForm("Update", "Category", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.CATEGORYID)
+        @Html.TextBoxFor(m => m.CATEGORYID, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(m => m.CATEGORYNAME)
+        @Html.TextBoxFor(m => m.CATEGORYNAME, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-info">Update</button>
+    </div>
+}
+
+

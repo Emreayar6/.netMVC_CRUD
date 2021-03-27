@@ -1,0 +1,60 @@
+﻿@using BookStore.Models.Entity;
+@model List<TBLCLIENT>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+
+}
+@*style="background-image:linear-gradient(to right,#343a40,#1e1e1e)*@
+<body >
+    <br />
+
+    <table class="table table-bordered" style="background-image: linear-gradient(to left,#343a40,#1e1e1e)">
+        <tr style="color:white">
+            <th>CLIENT ID</th>
+            <th>CLIENT NAME</th>
+            <th>CLIENT SURNAME</th>
+            <th>DELETE</th>
+            <th>UPDATE</th>
+            <th>Delete Button</th>
+        </tr>
+        <tbody style="color:white">
+            @foreach (var clnt in Model)
+            {
+                <tr>
+                    <th>@clnt.CLIENTNID</th>
+                    <td align="center">@clnt.CLIENTNAME</td>
+                    <td align="center">@clnt.CLIENTSURNAME</td>
+                    <td><a href="/CLIENT/Delete/@clnt.CLIENTNID" id="delete" class="btn">DELETE</a></td>
+                    <td><a href="/CLIENT/BringClient/@clnt.CLIENTNID" class="btn" style="background-color:cornflowerblue;color:white">UPDATE</a></td>
+                    <td>@Html.ActionLink("Delete2", "Delete", new { id = clnt.CLIENTNID }, new { @class = "btn btn-warning", onclick = "return confirm('Are You Sure?')" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/CLIENT/NewClient/" id="button" class="btn" style="background-color:#577430;color:white">NEW CLIENT</a>
+</body>
+<style>
+    @@keyframes example {
+        from {
+            background-color: #343a40;
+        }
+
+        to {
+            background-color: #1e1e1e;
+        }
+    }
+    body {
+        animation-name: example;
+        animation-duration: 3s;
+        animation-iteration-count:infinite;
+        animation-direction:alternate;
+    }
+
+    #delete {
+        background-color: #440e0e;
+        color: white;
+    }
+</style>
+

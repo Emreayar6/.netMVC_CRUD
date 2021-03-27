@@ -1,0 +1,50 @@
+﻿@model BookStore.Models.Entity.TBLSALES
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>Sales Pages</h2>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    Sale
+</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Product Sale Panel</h2>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <label>
+                        Product Name
+                    </label>
+                    @*<input type="text" name=" Product" class="form-control" />*@
+                    @Html.TextBoxFor(m => m.PRODUCT, new { @class = "form-control" })
+                    <label>
+                        Product Brand
+                    </label>
+                    <input type="text" name=" Brand" class="form-control" />
+                    <label>
+                        Amount
+                    </label>
+                    @*<input type="text" name=" Brand" class="form-control" />*@
+                    @Html.TextBoxFor(m => m.ITEM, new { @class = "form-control" })
+                    <label>
+                        Client Name-Surname
+                    </label>
+                    @*<input type="text" name=" Client" class="form-control" />*@
+                    @Html.TextBoxFor(m => m.CLIENT, new { @class = "form-control" })
+                    <label>
+                        Price
+                    </label>
+                    <input type="text" name=" GSM" class="form-control" />
+                    @Html.TextBoxFor(m => m.PRODUCT, new { @class = "form-control" })
+                    <br />
+                    <button class="btn btn-info">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

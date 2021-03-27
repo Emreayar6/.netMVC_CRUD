@@ -1,0 +1,28 @@
+﻿@model BookStore.Models.Entity.TBLCLIENT
+@{
+    ViewBag.Title = "BringClient";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>UPDATE CLIENT</h2>
+
+
+@using (Html.BeginForm("Update", "Client", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.CLIENTNID)
+        @Html.TextBoxFor(m => m.CLIENTNID, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CLIENTNAME)
+        @Html.TextBoxFor(m => m.CLIENTNAME, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CLIENTSURNAME)
+        @Html.TextBoxFor(m => m.CLIENTSURNAME, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-info">Update</button>
+    </div>
+}
+
