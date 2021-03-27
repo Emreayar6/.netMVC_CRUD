@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b3889e3c1ed84c7fb96045a31ed09f55" Name="Diagram1">
+        <EntityTypeShape EntityType="DbBookStoreModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbBookStoreModel.TBLCATEGORY" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbBookStoreModel.TBLCLIENT" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbBookStoreModel.TBLPRODUCT" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbBookStoreModel.TBLSALES" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="DbBookStoreModel.FK_TBLPRODUCT_TBLCATEGORY" ManuallyRouted="false" />
+        <AssociationConnector Association="DbBookStoreModel.FK_TBLSALES_TBLCLIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="DbBookStoreModel.FK_TBLSALES_TBLPRODUCT" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
